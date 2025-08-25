@@ -4,33 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abhiya's Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <header>
-    <h1>Welcome to My Portfolio</h1>
+    <h1>Hi, I'm Abhiya 👩‍💻</h1>
+    <p>Cybersecurity | Networks | Systems</p>
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#studies">Studies & Experience</a>
+      <a href="#studies">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <img src="myphoto.jpeg" alt="Abhiya's Photo" width="150" height="150">
-    <p>Hello 👋 I'm <b>Abhiya M Jose</b>.  
-    I’m passionate about <b>security, networks, and systems</b>.  
-    Currently pursuing <b>M.Tech in Cyber Security</b> at IIT Delhi.  
-    Exploring future technologies in intrusion detection, cryptography, and secure networks.</p>
-    <p>
-      <a href="https://www.linkedin.com/in/abhiya-m-jose-1584291a3" target="_blank">LinkedIn</a> |
-      <a href="https://www.geeksforgeeks.org/user/abhiyamjose02/" target="_blank">GFG</a> |
-      <a href="https://leetcode.com/u/Abhiya/" target="_blank">LeetCode</a>
-    </p>
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-photo">
+        <img src="myphoto.jpeg" alt="Abhiya's Photo">
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>Hello 👋 I'm <b>Abhiya M Jose</b>.  
+        Passionate about <b>security, networks, and systems</b>.  
+        Currently pursuing <b>M.Tech in Cyber Security</b> at IIT Delhi.  
+        Exploring future technologies in intrusion detection, cryptography, and secure networks.</p>
+
+        <div class="social-links">
+          <a href="https://leetcode.com/u/Abhiya/" class="btn leetcode">LeetCode</a>
+          <a href="https://www.geeksforgeeks.org/user/abhiyamjose02/" class="btn gfg">GFG</a>
+          <a href="https://www.linkedin.com/in/abhiya-m-jose-1584291a3" class="btn linkedin">LinkedIn</a>
+          <a href="https://github.com/Abhiya24" class="btn github">GitHub</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Skills Section -->
@@ -48,37 +57,34 @@
   <section id="projects">
     <h2>Projects</h2>
 
-    <h3>🔐 Security</h3>
-    <div class="card">
-      <h4>Robust Backdoor Detection in Neural Networks</h4>
-      <p>Addressed adaptive Trojan/backdoor attacks in black-box neural networks. 
-         Improved detection AUC from 89% → 92% using continual learning, focal loss tuning, and ensemble classifiers.</p>
-    </div>
-    <div class="card">
-      <h4>Buffer Overflow Vulnerability Analysis</h4>
-      <p>Discovered and exploited stack-based buffer overflows in a C web server using GDB on Linux.</p>
-    </div>
-    <div class="card">
-      <h4>Scalable Network Traffic Analysis & Threat Detection</h4>
-      <p>Developed a lightweight IDS with anomaly detection, sublinear-space methods, and threat analysis for large-scale traffic.</p>
+    <div class="card" onclick="toggleProject(this)">
+      <h3>🔐 Robust Backdoor Detection in Neural Networks</h3>
+      <p class="hidden">Improved detection AUC from 89% → 92% using continual learning, focal loss tuning, and ensemble classifiers.</p>
     </div>
 
-    <h3>🌐 Networks</h3>
-    <div class="card">
-      <h4>Software-Defined Networking: Policy Implementation</h4>
-      <p>Implemented spanning tree & shortest-path routing in SDN using Ryu & Mininet. 
-         Extended functionality with flow-rule installation, congestion-aware routing.</p>
-    </div>
-    <div class="card">
-      <h4>TCP-like UDP: Reliable File Transfer</h4>
-      <p>Built a reliable file transfer protocol over UDP with ACKs, retransmissions, and Reno congestion control in Mininet + Ryu.</p>
+    <div class="card" onclick="toggleProject(this)">
+      <h3>🌐 Software-Defined Networking</h3>
+      <p class="hidden">Implemented spanning tree & shortest-path routing in SDN using Ryu & Mininet. Extended functionality with congestion-aware routing.</p>
     </div>
 
-    <h3>💻 Systems</h3>
-    <div class="card">
-      <h4>Socket Programming & Scheduling Algorithms</h4>
-      <p>Built a client-server app using TCP sockets & pThreads with distributed and centralized scheduling. 
-         Analyzed fairness and throughput under varying loads and concurrency.</p>
+    <div class="card" onclick="toggleProject(this)">
+      <h3>💻 TCP-like UDP: Reliable File Transfer</h3>
+      <p class="hidden">Built a reliable file transfer protocol over UDP with ACKs, retransmissions, and Reno congestion control in Mininet + Ryu.</p>
+    </div>
+
+    <div class="card" onclick="toggleProject(this)">
+      <h3>🖥️ Socket Programming & Scheduling Algorithms</h3>
+      <p class="hidden">Built a client-server app using TCP sockets & pThreads with distributed and centralized scheduling.</p>
+    </div>
+
+    <div class="card" onclick="toggleProject(this)">
+      <h3>⚡ Buffer Overflow Vulnerability Analysis</h3>
+      <p class="hidden">Discovered and exploited stack-based buffer overflows in a C web server using GDB on Linux.</p>
+    </div>
+
+    <div class="card" onclick="toggleProject(this)">
+      <h3>🔎 Scalable Network Traffic Analysis & Threat Detection</h3>
+      <p class="hidden">Developed a lightweight IDS with anomaly detection, sublinear-space methods, and threat analysis for large-scale traffic.</p>
     </div>
   </section>
 
@@ -88,9 +94,7 @@
     <ul>
       <li><b>M.Tech in Cyber Security</b>, IIT Delhi – CGPA: 8.64</li>
       <li><b>B.Tech in CSE</b>, IIIT Bhagalpur – CGPA: 8.26</li>
-      <li><b>Cybersecurity Intern</b>, Macquarie Global Services (Feb 2023 – Aug 2023)  
-        - Worked on IAM (Identity & Access Management) with SailPoint IdentityIQ  
-        - Gained hands-on experience in provisioning, access certifications, and RBAC concepts</li>
+      <li><b>Cybersecurity Intern</b>, Macquarie Global Services (Feb 2023 – Aug 2023)</li>
     </ul>
   </section>
 
@@ -103,5 +107,12 @@
   <footer>
     <p>© 2025 Abhiya M Jose</p>
   </footer>
+
+  <script>
+    function toggleProject(card) {
+      const desc = card.querySelector("p");
+      desc.classList.toggle("hidden");
+    }
+  </script>
 </body>
 </html>
